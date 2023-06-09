@@ -1,3 +1,6 @@
+# This file is an example of integrating different scripts into a single application
+
+
 from pylsl import StreamInlet, resolve_stream #import pylsl to use LSL and recover the data from the sensors
 
 
