@@ -7,7 +7,7 @@ from pylsl import StreamInlet, resolve_stream #import pylsl to use LSL and recov
 def simple_datastream():
     streams = resolve_stream('name','OpenSignals') #recover the list of LSL streams of type = emg
 
-    inlet = StreamInlet(streams[0]) #create a inlet from the first stream of the list
+    inlet = StreamInlet(streams[0]) #create an inlet from the first stream of the list
 
     while True:
         sample, timestamp = inlet.pull_sample() #recover the data sample and their timestamp from the inlet

@@ -1,10 +1,10 @@
-# This file is an example of how to record EMG data from sensors and write it in a CSV file
+# This file is an example of how to record EEG data from sensors and write it in a CSV file
 
 # Once you have put the info of your sensor in the resolve_stream function, it will find the stream and create an inlet to access the 
 # data
 
 # You can write the filename you want to create and the filepath where it should be created such as:
-# 'filepath/filename.csv' (example : 'EMG_data/my_new_EMG_data.csv')
+# 'filepath/filename.csv' (example : 'EEG_data/my_new_EEG_data.csv')
 
 # The results will be written in the CSV file with the filename at the filepath location
 # You can add additional informations in the CSV such as the timestamps for example. 
@@ -13,15 +13,14 @@
 # This example uses pandas to write the data in an CSV files. Other options exists but pandas is easy and very efficient.
 
 from pylsl import StreamInlet, resolve_stream #import pylsl to use LSL and recover the data from the sensors
-
-import os #import os to modify files and navigate in the system
+import os #import os to write data in csv 
 import pandas as pd #import pandas to use the Dataframe struct to write in csv file (other option are possible)
 
-streams = resolve_stream('type','emg') #recover the list of LSL streams of type = emg
+streams = resolve_stream('type','eeg') #recover the list of LSL streams of type = eeg
 
 inlet = StreamInlet(streams[0]) #create a inlet from the first stream of the list
 
-output_path='EMG_code/data.csv' #path to filename
+output_path = 'EEG_code/data.csv' #path to filename
 df = pd.DataFrame(columns=['val'])
 
 while True:
