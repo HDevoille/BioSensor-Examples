@@ -7,7 +7,7 @@
 
 from pylsl import StreamInlet, resolve_stream #import pylsl to use LSL and recover the data from the sensors
 
-streams = resolve_stream('type','eeg') #recover the list of LSL streams of type = eeg
+streams = resolve_stream('type','EEG') #recover the list of LSL streams of type = eeg
 
 inlet = StreamInlet(streams[0]) #create a inlet from the first stream of the list
 
