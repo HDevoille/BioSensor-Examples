@@ -7,7 +7,7 @@
 
 from pylsl import StreamInlet, resolve_stream #import pylsl to use LSL and recover the data from the sensors
 
-streams = resolve_stream('type','emg') #recover the list of LSL streams of type = emg 
+streams = resolve_stream()) #recover the list of LSL streams of type = emg 
 # we can also use other things such as 'name' and 'the name of your stream' or 'hostname' and 'the hostname of the stream'
 # to connect to the LSL stream of the sensor
 
